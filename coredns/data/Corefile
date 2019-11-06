@@ -1,0 +1,12 @@
+service-discovery.local {
+    loadbalance round_robin
+    file /data/db.service-discovery.local
+    log
+}
+
+. {
+    forward . /etc/resolv.conf
+    log
+    errors
+    cache
+}
